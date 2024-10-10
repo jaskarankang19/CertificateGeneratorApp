@@ -1,19 +1,13 @@
 ﻿@page
-@model GenerateCertificateModel
-<h2>Upload Excel File to Generate Certificates</h2>
-
-<form method="post" enctype="multipart/form-data">
-    <div>
-        <label>Select Excel File:</label>
-        <input type="file" name="UploadedFile" />
+@model IndexModel
+<h2>Welcome to certificate generator app by Block Bhunga.</h2>
+<div class="container ">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <a class="btn btn-success m-2" asp-page="GenerateAll">Generate All Certificates</a>
+        </div>
+        <div class="col-md-6 mx-auto">
+            <a class="btn btn-info m-2" asp-page="GeneratePerRo">Generate Certificate per RO</a>
+        </div>
     </div>
-
-    <div>
-        <label>Custom Output Folder Path:</label>
-        <input type="text" name="CustomFolderPath" placeholder="Enter folder path where you want to save" />
-    </div>
-
-    <button type="submit">Upload and Generate Certificates</button>
-</form>
-
-<p>@Model.Message</p>
+</div>

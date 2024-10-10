@@ -1,0 +1,30 @@
+﻿@page
+@model GenerateRoCertificateModel
+<h2>Upload Excel File to Generate Certificates per Returning Officer</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="m-2">
+        <label>Select Excel File:</label>
+        <input type="file" name="UploadedFile" />
+    </div>
+
+    <div class="m-2">
+        <label>Output Folder Path:</label>
+        <input class="col-md-6" type="text" name="CustomFolderPath" placeholder="Enter folder path where you want to save" />
+    </div>
+
+    <div class="m-2">
+        <label>Select RO Number:</label>
+        <select name="RoNumber" class="col-md-6">
+            <option value="">Select RO number</option>
+            @for (int i = 1; i <= 23; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </select>
+    </div>
+
+    <button class="btn btn-success m-2" type="submit">Upload and Generate Certificates</button>
+</form>
+
+<p>@Model.Message</p>
