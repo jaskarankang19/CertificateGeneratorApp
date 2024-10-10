@@ -1,0 +1,19 @@
+﻿@page
+@model GenerateCertificateModel
+<h2>Upload Excel File to Generate Certificates</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <div>
+        <label>Select Excel File:</label>
+        <input type="file" name="UploadedFile" />
+    </div>
+
+    <div>
+        <label>Custom Output Folder Path:</label>
+        <input type="text" name="CustomFolderPath" placeholder="Enter folder path where you want to save" />
+    </div>
+
+    <button type="submit">Upload and Generate Certificates</button>
+</form>
+
+<p>@Model.Message</p>
